@@ -17,15 +17,22 @@
     #include "logger.h"
     
 
-    typedef struct nodo{
+    typedef struct {
                 char* dominio;
                 char* IP;
                 }T_elem;
                 
     typedef struct {
-                T_logger *logFILE;
+                int tamdato;
                 TAB abDNS;
                 }TDADNS;
+                
+    typedef struct {
+                int octeto1;
+            	int octeto2;
+            	int octeto3;
+            	int octeto4;
+                }T_ip;
     
     /*
     crearDNS
@@ -35,7 +42,7 @@
     asociados a un dominio.
     Postcondiciones : Se inicializa la estructura apuntada por dns.
     */
-    int crearDNS(TDADNS *dns, int tamDato, T_logger *log);
+    int crearDNS(TDADNS *dns, int tamDato);
     
     /*
     destruirDNS
